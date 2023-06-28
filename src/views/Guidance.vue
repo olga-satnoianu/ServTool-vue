@@ -98,9 +98,9 @@ Promise.allSettled([guides, majorEvents])
       is_loading.value = false;
     });
 
-const showGuide = (major_event_id: number) => {
+const showGuide = (major_event_id) => {
   if(major_event_id) {
-    show_guides.value = all_guides.value.filter(el => el.major_event_id === major_event_id);
+    show_guides.value = all_guides.value.filter(el => el.major_event_id == major_event_id.id);
   }
   else {
     show_guides.value = all_guides.value;
