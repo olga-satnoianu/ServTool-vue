@@ -1,0 +1,245 @@
+.vue3-easy-data-table {
+  border: var(--easy-table-border);
+  position: relative;
+  box-sizing: border-box;
+}
+.vue3-easy-data-table__main {
+  border: none;
+  width: 100%;
+  overflow: auto;
+  background-color: var(--easy-table-body-row-background-color);
+}
+.vue3-easy-data-table__main::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: var(--easy-table-scrollbar-track-color);
+}
+.vue3-easy-data-table__main::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+  background-color: var(--easy-table-scrollbar-color);
+}
+.vue3-easy-data-table__main::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--easy-table-scrollbar-thumb-color);
+}
+.vue3-easy-data-table__main::-webkit-scrollbar-corner {
+  background-color: var(--easy-table-scrollbar-corner-color);
+}
+.vue3-easy-data-table__main.table-fixed table {
+  table-layout: fixed;
+}
+.vue3-easy-data-table__main.show-shadow th.shadow::after, .vue3-easy-data-table__main.show-shadow td.shadow::after {
+  box-shadow: inset 6px 0 5px -3px rgba(0, 0, 0, 0.2);
+}
+.vue3-easy-data-table__main.fixed-header th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.vue3-easy-data-table__main.hoverable tr:hover td {
+  background-color: var(--easy-table-body-row-hover-background-color);
+  color: var(--easy-table-body-row-hover-font-color);
+}
+.vue3-easy-data-table__main.hoverable .vue3-easy-data-table__body.row-alternation .even-row:hover td {
+  color: var(--easy-table-body-row-hover-font-color);
+  background-color: var(--easy-table-body-row-hover-background-color);
+}
+.vue3-easy-data-table__main.border-cell .vue3-easy-data-table__header th {
+  border-right: var(--easy-table-row-border);
+}
+.vue3-easy-data-table__main.border-cell .vue3-easy-data-table__header th:last-of-type {
+  border-right: none;
+}
+.vue3-easy-data-table__main.border-cell .vue3-easy-data-table__body td {
+  border-right: var(--easy-table-row-border);
+}
+.vue3-easy-data-table__main.border-cell .vue3-easy-data-table__body td:last-of-type {
+  border-right: none;
+}
+.vue3-easy-data-table__body.row-alternation tr.even-row td {
+  color: var(--easy-table-body-even-row-font-color);
+  background-color: var(--easy-table-body-even-row-background-color);
+}
+table {
+  display: table;
+  width: 100%;
+  border-spacing: 0;
+  margin: 0px;
+}
+.vue3-easy-data-table__header, vue3-easy-data-table__body {
+  position: relative;
+}
+.vue3-easy-data-table__header tr {
+  font-size: var(--easy-table-header-font-size);
+  border: none;
+  height: var(--easy-table-header-height);
+}
+.vue3-easy-data-table__header th {
+  background-color: var(--easy-table-header-background-color);
+  color: var(--easy-table-header-font-color);
+  border: none;
+  border-bottom: var(--easy-table-row-border);
+  padding: var(--easy-table-header-item-padding);
+  position: relative;
+}
+.vue3-easy-data-table__header th .header {
+  display: flex;
+  align-items: center;
+}
+.vue3-easy-data-table__header th .header.direction-left {
+  justify-content: flex-start;
+}
+.vue3-easy-data-table__header th .header.direction-center {
+  justify-content: center;
+}
+.vue3-easy-data-table__header th .header.direction-right {
+  justify-content: flex-end;
+}
+.vue3-easy-data-table__header th.sortable {
+  cursor: pointer;
+}
+.vue3-easy-data-table__header th.sortable .sortType-icon {
+  border: 5px solid transparent;
+  margin-top: -3px;
+  margin-left: 4px;
+  display: inline-block;
+  height: 0;
+  width: 0;
+  position: relative;
+  border-bottom-color: var(--easy-table-header-font-color);
+}
+.vue3-easy-data-table__header th.sortable .multi-sort__number {
+  border-radius: 50%;
+  height: 1.5em;
+  width: 1.5em;
+  line-height: 1.5em;
+  margin-left: 4px;
+  background-color: var(--easy-table-header-font-color);
+  color: var(--easy-table-header-background-color);
+}
+.vue3-easy-data-table__header th.sortable.none:hover .sortType-icon {
+  opacity: 1;
+}
+.vue3-easy-data-table__header th.sortable.none .sortType-icon {
+  opacity: 0;
+  transition: 0.5s ease;
+}
+.vue3-easy-data-table__header th.sortable.desc .sortType-icon {
+  margin-top: 5px;
+  transform: rotate(180deg);
+}
+.vue3-easy-data-table__header th.shadow::after, .vue3-easy-data-table__body td.shadow::after {
+  pointer-events: none;
+  content: "";
+  width: 36px;
+  display: inline-block;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  right: -36px;
+  box-shadow: none;
+}
+.vue3-easy-data-table__body tr {
+  height: var(--easy-table-body-row-height);
+  color: var(--easy-table-body-row-font-color);
+  font-size: var(--easy-table-body-row-font-size);
+}
+.vue3-easy-data-table__body tr:nth-child(-n+3) td {
+  border-bottom: var(--easy-table-row-border) !important;
+}
+.vue3-easy-data-table__body tr:last-child td {
+  border-bottom: none;
+}
+.vue3-easy-data-table__body tr:first-child td {
+  border-bottom: var(--easy-table-row-border);
+}
+.vue3-easy-data-table__body td {
+  padding: var(--easy-table-body-item-padding);
+  background-color: var(--easy-table-body-row-background-color);
+  border: none;
+  border-bottom: var(--easy-table-row-border);
+  position: relative;
+}
+.vue3-easy-data-table__body td.direction-left {
+  text-align: left;
+}
+.vue3-easy-data-table__body td.direction-center {
+  text-align: center;
+}
+.vue3-easy-data-table__body td.direction-right {
+  text-align: right;
+}
+.vue3-easy-data-table__body td .expand-icon {
+  border: solid;
+  border-color: var(easy-table-body-row-font-color);
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-45deg);
+  transition: 0.2s;
+}
+.vue3-easy-data-table__body td .expand-icon.expanding {
+  transform: rotate(45deg);
+}
+.vue3-easy-data-table__body td.expand {
+  position: relative;
+}
+.vue3-easy-data-table__body td.expand .expand-loading {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.vue3-easy-data-table__body td.can-expand {
+  cursor: pointer;
+}
+.vue3-easy-data-table__footer {
+  background-color: var(--easy-table-footer-background-color);
+  color: var(--easy-table-footer-font-color);
+  border-top: var(--easy-table-row-border);
+  font-size: var(--easy-table-footer-font-size);
+  height: var(--easy-table-footer-height);
+  padding: var(--easy-table-footer-padding);
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.vue3-easy-data-table__footer .pagination__rows-per-page {
+  display: flex;
+  align-items: center;
+}
+.vue3-easy-data-table__footer .pagination__items-index {
+  margin: 0px 20px 0px 10px;
+}
+.vue3-easy-data-table__message {
+  color: var(--easy-table-message-font-color);
+  font-size: var(--easy-table-message-font-size);
+  padding: var(--easy-table-message-padding);
+  text-align: center;
+}
+.vue3-easy-data-table__loading {
+  z-index: 3;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vue3-easy-data-table__loading .loading-entity {
+  z-index: 1;
+}
+.vue3-easy-data-table__loading-mask {
+  background-color: var(--easy-table-loading-mask-background-color);
+  opacity: var(--easy-table-loading-mask-opacity);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+}
